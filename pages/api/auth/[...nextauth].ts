@@ -12,10 +12,10 @@ export default NextAuth({
          name: "credentials",
          credentials: {
             email: { label: "email", type: "text" },
-            passwod: { label: "passwod", type: "passwod" },
+            password: { label: "password", type: "password" },
          },
          async authorize(credentials) {
-            if (!credentials?.email || !credentials?.passwod) throw new Error("Invalid credentials")
+            if (!credentials?.email || !credentials?.password) throw new Error("Invalid credentials")
 
             const user = await prisma.user.findUnique({
                where: {
@@ -25,7 +25,7 @@ export default NextAuth({
 
             if (!user || !user?.hashedPassword) throw new Error("Invalid credentials")
 
-            const isCorrectPassword = await bcrypt.compare(credentials.passwod, user.hashedPassword)
+            const isCorrectPassword = await bcrypt.compare(credentials.password, user.hashedPassword)
 
             if (!isCorrectPassword) throw new Error("Invalid credentials")
 
