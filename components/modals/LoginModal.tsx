@@ -33,6 +33,9 @@ const LoginModal = () => {
          toast.success("Logged in")
 
          loginModal.onClose()
+
+         setEmail("")
+         setPassword("")
       } catch (err) {
          console.error(err)
       } finally {
