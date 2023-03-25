@@ -2,17 +2,7 @@ import { useCallback } from "react"
 import { AiOutlineClose } from "react-icons/ai"
 import Button from "./Button"
 import Styles from "@/styles/Modal.module.css"
-
-interface ModalProps {
-   isOpen?: boolean
-   onClose: () => void
-   onSubmit: () => void
-   title?: string
-   body?: React.ReactElement
-   footer?: React.ReactElement
-   actionLabel: string
-   disabled?: boolean
-}
+import { ModalProps } from "@/utils/interface"
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onSubmit, title, body, footer, actionLabel, disabled }) => {
    const handleClose = useCallback(() => {

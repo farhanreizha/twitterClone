@@ -2,13 +2,7 @@ import Image from "next/image"
 import { useCallback, useState } from "react"
 import { useDropzone } from "react-dropzone"
 import Styles from "@/styles/Base.module.css"
-
-interface ImageUploadProps {
-   onChange: (base64: string) => void
-   label?: string
-   value?: string
-   disabled?: boolean
-}
+import { ImageUploadProps } from "@/utils/interface"
 
 const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, label, value, disabled }) => {
    const [base64, setBase64] = useState(value)

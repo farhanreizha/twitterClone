@@ -1,14 +1,5 @@
 import Styles from "@/styles/Base.module.css"
-
-interface ButtonProps {
-   label: string
-   large?: boolean
-   secondary?: boolean
-   fullWidth?: boolean
-   onClick?: () => void
-   disabled?: boolean
-   outline?: boolean
-}
+import { ButtonProps } from "@/utils/interface"
 
 const Button: React.FC<ButtonProps> = ({ label, large, secondary, fullWidth, onClick, disabled, outline }) => {
    return (

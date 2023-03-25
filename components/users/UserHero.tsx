@@ -2,10 +2,7 @@ import Image from "next/image"
 import useUser from "@/hooks/useUser"
 import Avatar from "../Avatar"
 import Styles from "@/styles/User.module.css"
-
-interface UserHeroProps {
-   userId: string
-}
+import { UserHeroProps } from "@/utils/interface"
 
 const UserHero: React.FC<UserHeroProps> = ({ userId }) => {
    const { data: fetchUser } = useUser(userId)

@@ -5,10 +5,7 @@ import RegisterModal from "@/components/modals/RegisterModal"
 import FollowBar from "./layout/FollowBar"
 import Sidebar from "./layout/Sidebar"
 import Styles from "@/styles/Layout.module.css"
-
-interface LayoutProps {
-   children: React.ReactNode
-}
+import { LayoutProps } from "@/utils/interface"
 
 const Popup = () => (
    <>

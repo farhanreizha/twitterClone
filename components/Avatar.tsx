@@ -3,12 +3,7 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import { useCallback } from "react"
 import Styles from "@/styles/Base.module.css"
-
-interface AvatarProps {
-   userId: string
-   isLarge?: boolean
-   hasBorder?: boolean
-}
+import { AvatarProps } from "@/utils/interface"
 
 const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
    const { data: fetchUser } = useUser(userId)

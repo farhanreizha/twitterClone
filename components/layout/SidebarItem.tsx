@@ -1,18 +1,10 @@
 import { useRouter } from "next/router"
 import { useCallback } from "react"
-import { IconType } from "react-icons"
 import useCurrentUser from "@/hooks/useCurrentUser"
 import useLoginModal from "@/hooks/useLoginModal"
 import Link from "next/link"
 import Styles from "@/styles/Sidebar.module.css"
-
-interface SidebarItemProps {
-   label: string
-   href?: string
-   icon: IconType
-   onClick?: () => void
-   auth?: boolean
-}
+import { SidebarItemProps } from "@/utils/interface"
 
 const SidebarItem: React.FC<SidebarItemProps> = ({ icon: Icon, label, href, onClick, auth }) => {
    const loginModal = useLoginModal()
