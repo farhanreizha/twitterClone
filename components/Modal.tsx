@@ -1,6 +1,7 @@
 import { useCallback } from "react"
 import { AiOutlineClose } from "react-icons/ai"
 import Button from "./Button"
+import Styles from "@/styles/Modal.module.css"
 
 interface ModalProps {
    isOpen?: boolean
@@ -28,21 +29,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onSubmit, title, body, f
 
    return (
       <>
-         <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-neutral-800 bg-opacity-70">
-            <div className="relative w-full xl:w-3/6 my-6 mx-auto xl:max-w-3xl h-full xl:h-auto">
+         <div className={Styles.container}>
+            <div className={Styles.overlay}>
                {/* Content */}
-               <div className="h-full xl:h-auto border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-black outline-none focus:outline-none">
+               <div className={Styles.background}>
                   {/* Header */}
-                  <div className="flex items-center justify-center p-10 rounded-t">
-                     <h3 className="text-3xl font-semibold text-white">{title}</h3>
-                     <button onClick={handleClose} className="p-1 ml-auto border-0 text-white hover:opacity-70 transition">
+                  <div className={Styles.header}>
+                     <h3 className={Styles.title}>{title}</h3>
+                     <button onClick={handleClose} className={Styles.closeButton}>
                         <AiOutlineClose size={20} />
                      </button>
                   </div>
                   {/* Body */}
-                  <div className="relative p-10 flex-auto">{body}</div>
+                  <div className={Styles.content}>{body}</div>
                   {/* Footer */}
-                  <div className="flex flex-col gap-2 p-10">
+                  <div className={Styles.footer}>
                      <Button disabled={disabled} label={actionLabel} secondary fullWidth large onClick={handleSubmit} />
                      {footer}
                   </div>

@@ -5,6 +5,7 @@ import { signIn } from "next-auth/react"
 
 import useLoginModal from "@/hooks/useLoginModal"
 import useRegisterModal from "@/hooks/useRegisterModal"
+import Styles from "@/styles/Modal.module.css"
 
 import Input from "../Input"
 import Modal from "../Modal"
@@ -61,7 +62,7 @@ const RegisterModal = () => {
    }, [email, password, registerModal, username, name])
 
    const bodyContent = (
-      <div className="flex flex-col gap-4">
+      <div className={Styles.form}>
          <Input disabled={isLoading} placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
          <Input disabled={isLoading} placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
          <Input disabled={isLoading} placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
@@ -70,10 +71,10 @@ const RegisterModal = () => {
    )
 
    const footerContent = (
-      <div className="text-neutral-400 text-center mt-4">
+      <div className={Styles.footerContent}>
          <p>
             Already have an account?{" "}
-            <span onClick={onToggle} className="text-white cursor-pointer hover:underline">
+            <span onClick={onToggle} className={Styles.footerLink}>
                Sign in
             </span>
          </p>

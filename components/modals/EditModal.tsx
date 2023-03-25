@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react"
 import useCurrentUser from "@/hooks/useCurrentUser"
 import useUser from "@/hooks/useUser"
 import useEditModal from "@/hooks/useEditModal"
+import Styles from "@/styles/Modal.module.css"
 
 import Input from "../Input"
 import Modal from "../Modal"
@@ -57,7 +58,7 @@ const EditModal = () => {
    }, [name, username, bio, profileImage, coverImage, mutateFetchUser, editModal])
 
    const bodyContent = (
-      <div className="flex flex-col gap-4">
+      <div className={Styles.form}>
          <ImageUpload value={profileImage} disabled={isLoading} onChange={(image) => setProfileImage(image)} label="Upload profile image" />
          <ImageUpload value={coverImage} disabled={isLoading} onChange={(image) => setCoverImage(image)} label="Upload cover image" />
          <Input disabled={isLoading} placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />

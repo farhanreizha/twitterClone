@@ -1,0 +1,33 @@
+.base {
+   @apply col-span-1 xl:col-span-2 h-full pr-4 xl:pr-6;
+}
+.containes {
+   @apply flex flex-col items-end;
+}
+.wrap {
+   @apply space-y-2 xl:w-[230px];
+}
+.logo {
+   @apply rounded-full h-14 w-14 p-4 flex items-center justify-center hover:bg-blue-300 hover:bg-opacity-10 cursor-pointer transition;
+}
+.items {
+   @apply flex flex-row items-center;
+}
+.itemIcon {
+   @apply relative rounded-full h-14 w-14 flex items-center justify-center p-4 hover:bg-slate-300 hover:bg-opacity-10 cursor-pointer xl:hidden;
+}
+.itemList {
+   @apply relative hidden xl:flex gap-4 p-4 rounded-full items-center hover:bg-slate-300 hover:bg-opacity-10 cursor-pointer;
+}
+.itemLabel {
+   @apply hidden xl:block text-white text-xl;
+}
+.buttonLarge {
+   @apply mt-6 hidden xl:block rounded-full px-4 py-2 bg-sky-700 hover:bg-opacity-90 transition cursor-pointer;
+}
+.button {
+   @apply mt-6 xl:hidden rounded-full h-14 w-14 p-4 flex items-center justify-center bg-sky-700 hover:bg-opacity-80 transition cursor-pointer;
+}
+.text {
+   @apply hidden xl:block text-center font-semibold text-white text-[20px];
+}
