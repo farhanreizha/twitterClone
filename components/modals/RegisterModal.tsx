@@ -48,6 +48,11 @@ const RegisterModal = () => {
          })
 
          registerModal.onClose()
+
+         setEmail("")
+         setPassword("")
+         setName("")
+         setUsername("")
       } catch (error) {
          toast.error("Something went wrong")
       } finally {

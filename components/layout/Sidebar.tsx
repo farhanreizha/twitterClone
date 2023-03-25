@@ -16,9 +16,9 @@ const Sidebar = () => {
       { label: "Profile", href: `/users/${currentUser?.id}`, icon: FaUser, auth: true },
    ]
    return (
-      <div className="col-span-1 h-full pr-4 md:pr-6">
+      <div className="col-span-1 xl:col-span-2 h-full pr-4 xl:pr-6">
          <div className="flex flex-col items-end">
-            <div className="space-y-2 lg:w-[230px]">
+            <div className="space-y-2 xl:w-[230px]">
                <SidebarLogo />
                {items.map((item) => (
                   <SidebarItem key={item.href} href={item.href} label={item.label} icon={item.icon} auth={item.auth} />
