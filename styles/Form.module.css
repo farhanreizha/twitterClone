@@ -5,7 +5,7 @@
    @apply flex flex-row items-center justify-center gap-4;
 }
 .textArea {
-   @apply disabled:opacity-80 resize-none mt-3 w-full bg-black ring-0 outline-none text-[20px] placeholder-neutral-500 text-white;
+   @apply disabled:opacity-80 resize-none mt-3 w-full bg-black ring-0 outline-none text-[20px] placeholder-neutral-400 text-white;
 }
 .divider {
    @apply opacity-0 peer-focus:opacity-100 h-[1px] w-full border-neutral-800 transition;

@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
    try {
       const { userId } = req.query
 
-      if (!userId || typeof userId !== "string") throw new Error("Invalid Id")
+      if (!userId || typeof userId !== "string") throw new Error("Invalid ID")
 
       const exitingUser = await prisma.user.findUnique({
          where: {
