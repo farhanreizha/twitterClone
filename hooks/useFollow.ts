@@ -1,41 +1,48 @@
+import axios from "axios"
 import { useCallback, useMemo } from "react"
+import { toast } from "react-hot-toast"
+
 import useCurrentUser from "./useCurrentUser"
 import useLoginModal from "./useLoginModal"
-import usePost from "./usePost"
-import usePosts from "./usePosts"
-import { toast } from "react-hot-toast"
-import axios from "axios"
+import useUser from "./useUser"
 
-const useLike = ({ postId, userId }: { postId: string; userId?: string }) => {
-   const { data: currentUser } = useCurrentUser()
-   const { data: fetchedPost, mutate: mutateFetchedPost } = usePost(postId)
-   const { mutate: mutateFetchedPosts } = usePosts(userId)
+const useFollow = (userId: string) => {
+   const { data: currentUser, mutate: mutateCurrentUser } = useCurrentUser()
+   const { mutate: mutateFetchedUser } = useUser(userId)
 
    const loginModal = useLoginModal()
 
-   const hasLiked = useMemo(() => {
-      const list = fetchedPost?.likeIds || []
-      return list.includes(currentUser?.id)
-   }, [currentUser, fetchedPost])
+   const isFollowing = useMemo(() => {
+      const list = currentUser?.followingIds || []
 
-   const toggleLike = useCallback(async () => {
-      if (!currentUser) return loginModal.onOpen()
+      return list.includes(userId)
+   }, [currentUser, userId])
+
+   const toggleFollow = useCallback(async () => {
+      if (!currentUser) {
+         return loginModal.onOpen()
+      }
 
       try {
          let request
-         if (hasLiked) request = () => axios.delete("/api/like", { data: { postId } })
-         else request = () => axios.post("/api/like", { postId })
+
+         if (isFollowing) {
+            request = () => axios.delete("/api/follow", { data: { userId } })
+         } else {
+            request = () => axios.post("/api/follow", { userId })
+         }
 
          await request()
-         mutateFetchedPost()
-         mutateFetchedPosts()
+         mutateCurrentUser()
+         mutateFetchedUser()
 
          toast.success("Success")
-      } catch (err) {
+      } catch (error) {
          toast.error("Something went wrong")
       }
-   }, [currentUser, hasLiked, loginModal, mutateFetchedPost, mutateFetchedPosts, postId])
-   return { hasLiked, toggleLike }
+   }, [currentUser, isFollowing, userId, mutateCurrentUser, mutateFetchedUser, loginModal])
+
+   return { isFollowing, toggleFollow }
 }
 
-export default useLike
+export default useFollow
