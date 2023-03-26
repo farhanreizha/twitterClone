@@ -1,7 +1,7 @@
-import { EditModalStore } from "@/utils/interface"
+import { ModalStore } from "@/utils/interface"
 import { create } from "zustand"
 
-const useEditModal = create<EditModalStore>((set) => ({
+const useEditModal = create<ModalStore>((set) => ({
    isOpen: false,
    onOpen: () => set({ isOpen: true }),
    onClose: () => set({ isOpen: false }),

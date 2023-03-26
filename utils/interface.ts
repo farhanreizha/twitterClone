@@ -51,11 +51,7 @@ export interface ModalProps {
    disabled?: boolean
 }
 
-export interface UserHeroProps {
-   userId: string
-}
-
-export interface UserBioProps {
+export interface UserProps {
    userId: string
 }
 
@@ -67,14 +63,22 @@ export interface SidebarItemProps {
    auth?: boolean
 }
 
-export interface EditModalStore {
+export interface ModalStore {
    isOpen: boolean
    onOpen: () => void
    onClose: () => void
 }
 
-export interface RegisterModalStore {
-   isOpen: boolean
-   onOpen: () => void
-   onClose: () => void
+export interface FormProps {
+   placeholder: string
+   isComment?: boolean
+   postId?: string
+}
+
+export interface PostFeedProps {
+   userId?: string
+}
+
+export interface PostItemProps extends PostFeedProps {
+   data: Record<string, any>
 }

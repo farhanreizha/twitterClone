@@ -6,9 +6,9 @@ import Button from "../Button"
 import { BiCalendar } from "react-icons/bi"
 import useEditModal from "@/hooks/useEditModal"
 import Styles from "@/styles/User.module.css"
-import { UserBioProps } from "@/utils/interface"
+import { UserProps } from "@/utils/interface"
 
-const UserBio: React.FC<UserBioProps> = ({ userId }) => {
+const UserBio: React.FC<UserProps> = ({ userId }) => {
    const { data: currentUser } = useCurrentUser()
    const { data: fetchUser } = useUser(userId)
    const editModal = useEditModal()

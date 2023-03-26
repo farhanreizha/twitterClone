@@ -17,25 +17,12 @@ const SidebarTweetButton = () => {
 
    return (
       <div onClick={onClick}>
-         {currentUser ? (
-            <>
-               <div className={Styles.button}>
-                  <FaFeather size={24} color="white" />
-               </div>
-               <div className={Styles.buttonLarge}>
-                  <p className={Styles.text}>Tweet</p>
-               </div>
-            </>
-         ) : (
-            <>
-               <div className={Styles.button}>
-                  <AiOutlineLogin size={24} color="white" />
-               </div>
-               <div className={Styles.buttonLarge}>
-                  <p className={Styles.text}>Sign in</p>
-               </div>
-            </>
-         )}
+         <div className={Styles.button}>
+            <FaFeather size={24} color="white" />
+         </div>
+         <div className={Styles.buttonLarge}>
+            <p className={Styles.text}>Tweet</p>
+         </div>
       </div>
    )
 }

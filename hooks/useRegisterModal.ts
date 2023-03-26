@@ -1,7 +1,7 @@
 import { create } from "zustand"
-import { RegisterModalStore } from "@/utils/interface"
+import { ModalStore } from "@/utils/interface"
 
-const useRegisterModal = create<RegisterModalStore>((set) => ({
+const useRegisterModal = create<ModalStore>((set) => ({
    isOpen: false,
    onOpen: () => set({ isOpen: true }),
    onClose: () => set({ isOpen: false }),

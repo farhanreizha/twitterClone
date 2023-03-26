@@ -39,7 +39,7 @@ model Post {
   userId    String?  @db.ObjectId
   likeIds   String[] @db.ObjectId
 
-  User User? @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User? @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   comments Comment[]
 }
@@ -52,7 +52,7 @@ model Comment {
   userId    String?  @db.ObjectId
   postId    String?  @db.ObjectId
 
-  User User? @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User? @relation(fields: [userId], references: [id], onDelete: Cascade)
   Post Post? @relation(fields: [postId], references: [id], onDelete: Cascade)
 }
 
@@ -62,5 +62,5 @@ model Notification {
   createdAt DateTime @default(now())
   userId    String?  @db.ObjectId
 
-  User User? @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User? @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
