@@ -18,7 +18,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ icon: Icon, label, href, onCl
    }, [auth, currentUser, href, loginModal, onClick, router])
 
    return (
-      <Link href={`${href}`} onClick={handleClick} className={Styles.items}>
+      <li onClick={handleClick} className={Styles.items}>
          <div className={Styles.itemIcon}>
             <Icon size={20} color="white" />
          </div>
@@ -26,7 +26,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ icon: Icon, label, href, onCl
             <Icon size={24} color="white" />
             <p className={Styles.itemLabel}>{label}</p>
          </div>
-      </Link>
+      </li>
    )
 }
 export default SidebarItem

@@ -19,14 +19,14 @@ const Sidebar = () => {
    return (
       <div className={Styles.base}>
          <div className={Styles.containes}>
-            <div className={Styles.wrap}>
+            <ul className={Styles.wrap}>
                <SidebarLogo />
                {items.map((item) => (
                   <SidebarItem key={item.href} href={item.href} label={item.label} icon={item.icon} auth={item.auth} />
                ))}
                {currentUser && <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Logout" />}
                <SidebarTweetButton />
-            </div>
+            </ul>
          </div>
       </div>
    )
