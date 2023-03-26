@@ -82,3 +82,11 @@ export interface PostFeedProps {
 export interface PostItemProps extends PostFeedProps {
    data: Record<string, any>
 }
+
+export interface CommentFeedProps {
+   comments: Record<string, any>[]
+}
+
+export interface CommentItemProps {
+   data: Record<string, any>
+}
