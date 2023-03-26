@@ -1,0 +1,27 @@
+.post {
+   @apply border-b-[1px] border-neutral-800 p-5 cursor-pointer hover:bg-neutral-900 transition;
+}
+.rows {
+   @apply flex flex-row items-start gap-3;
+}
+.header {
+   @apply flex flex-row items-center gap-2;
+}
+.primLink {
+   @apply text-white font-semibold cursor-pointer hover:underline;
+}
+.secLink {
+   @apply text-neutral-400 cursor-pointer hover:underline hidden md:block;
+}
+.date {
+   @apply text-neutral-400 text-sm;
+}
+.footer {
+   @apply flex flex-row items-center mt-3 gap-10;
+}
+.comment {
+   @apply flex flex-row items-center text-neutral-400 gap-2 cursor-pointer transition hover:text-sky-500;
+}
+.like {
+   @apply flex flex-row items-center text-neutral-400 gap-2 cursor-pointer transition hover:text-red-500;
+}
