@@ -1,5 +1,6 @@
 import useUsers from "@/hooks/useUsers"
 import Avatar from "../Avatar"
+import Styles from "@/styles/Followbar.module.css"
 
 const FollowBar = () => {
    const { data: users = [] } = useUsers()
@@ -7,16 +8,16 @@ const FollowBar = () => {
    if (users.length === 0) return null
 
    return (
-      <div className="col-span-3 px-6 py-4 hidden xl:block">
-         <div className="bg-neutral-800 rounded-xl p-4">
-            <h2 className="text-white text-xl font-semibold">Who to follow</h2>
-            <div className="flex flex-col gap-6 mt-4">
+      <div className={Styles.base}>
+         <div className={Styles.containes}>
+            <h2 className={Styles.title}>Who to follow</h2>
+            <div className={Styles.card}>
                {users.map((user: Record<string, any>) => (
-                  <div key={user.id} className="flex flex-row gap-4">
+                  <div key={user.id} className={Styles.cardWrap}>
                      <Avatar userId={user.id} />
-                     <div className="flex flex-col">
-                        <p className="text-white font-semibold text-sm">{user.name}</p>
-                        <p className="text-neutral-400 text-sm">@{user.username}</p>
+                     <div className={Styles.cardContain}>
+                        <p className={Styles.firstText}>{user.name}</p>
+                        <p className={Styles.secoundText}>@{user.username}</p>
                      </div>
                   </div>
                ))}

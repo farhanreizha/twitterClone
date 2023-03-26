@@ -1,14 +1,11 @@
 import { Toaster } from "react-hot-toast"
-
 import LoginModal from "@/components/modals/LoginModal"
 import EditModal from "@/components/modals/EditModal"
 import RegisterModal from "@/components/modals/RegisterModal"
 import FollowBar from "./layout/FollowBar"
 import Sidebar from "./layout/Sidebar"
-
-interface LayoutProps {
-   children: React.ReactNode
-}
+import Styles from "@/styles/Layout.module.css"
+import { LayoutProps } from "@/utils/interface"
 
 const Popup = () => (
    <>
@@ -23,11 +20,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
    return (
       <>
          <Popup />
-         <div className="h-screen bg-black">
-            <div className="container h-full mx-auto xl:px-30 max-w-6xl">
-               <div className="grid grid-cols-12 h-full">
+         <div className={Styles.base}>
+            <div className={Styles.containes}>
+               <div className={Styles.grids}>
                   <Sidebar />
-                  <div className="col-span-11 xl:col-span-7 border-x-[1px] border-neutral-800">{children}</div>
+                  <div className={Styles.main}>{children}</div>
                   <FollowBar />
                </div>
             </div>

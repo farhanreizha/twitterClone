@@ -1,0 +1,24 @@
+.base {
+   @apply col-span-3 px-6 py-4 hidden xl:block;
+}
+.containes {
+   @apply bg-neutral-800 rounded-xl p-4;
+}
+.title {
+   @apply text-white text-xl font-semibold;
+}
+.card {
+   @apply flex flex-col gap-6 mt-4;
+}
+.cardWrap {
+   @apply flex flex-row gap-4;
+}
+.cardContain {
+   @apply flex flex-col;
+}
+.firstText {
+   @apply text-white font-semibold text-sm;
+}
+.secoundText {
+   @apply text-neutral-400 text-sm;
+}

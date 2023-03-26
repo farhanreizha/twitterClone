@@ -1,0 +1,36 @@
+.hero {
+   @apply bg-neutral-700 h-44 relative;
+}
+.avatar {
+   @apply absolute -bottom-16 left-4;
+}
+.bio {
+   @apply border-b-[1px] border-neutral-800 pb-4;
+}
+.user {
+   @apply flex justify-end p-2;
+}
+.wraps {
+   @apply mt-8 px-4;
+}
+.wrap {
+   @apply flex flex-col gap-3;
+}
+.col {
+   @apply flex flex-col;
+}
+.primText {
+   @apply text-white text-2xl font-semibold;
+}
+.secText {
+   @apply text-neutral-400;
+}
+.joined {
+   @apply flex flex-row items-center gap-2 mt-4 text-neutral-400;
+}
+.rows {
+   @apply flex flex-row items-center mt-4 gap-6;
+}
+.info {
+   @apply flex flex-row items-center gap-1;
+}

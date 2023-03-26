@@ -5,6 +5,7 @@ import Modal from "../Modal"
 import useRegisterModal from "@/hooks/useRegisterModal"
 import { signIn } from "next-auth/react"
 import { toast } from "react-hot-toast"
+import Styles from "@/styles/Modal.module.css"
 
 const LoginModal = () => {
    const loginModal = useLoginModal()
@@ -44,17 +45,17 @@ const LoginModal = () => {
    }, [email, loginModal, password])
 
    const bodyContent = (
-      <div className="flex flex-col gap-4">
+      <div className={Styles.form}>
          <Input placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} disabled={isLoading} />
          <Input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} value={password} disabled={isLoading} />
       </div>
    )
 
    const footerContent = (
-      <div className="text-neutral-400 text-center mt-4">
+      <div className={Styles.footerContent}>
          <p>
             First time using Twitter?{" "}
-            <span onClick={onToggle} className="text-white cursor-pointer hover:underline">
+            <span onClick={onToggle} className={Styles.footerLink}>
                Create an account
             </span>
          </p>

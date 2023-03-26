@@ -5,12 +5,10 @@ import { useMemo } from "react"
 import Button from "../Button"
 import { BiCalendar } from "react-icons/bi"
 import useEditModal from "@/hooks/useEditModal"
+import Styles from "@/styles/User.module.css"
+import { UserProps } from "@/utils/interface"
 
-interface UserBioProps {
-   userId: string
-}
-
-const UserBio: React.FC<UserBioProps> = ({ userId }) => {
+const UserBio: React.FC<UserProps> = ({ userId }) => {
    const { data: currentUser } = useCurrentUser()
    const { data: fetchUser } = useUser(userId)
    const editModal = useEditModal()
@@ -21,34 +19,36 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
    }, [fetchUser.createdAt])
 
    return (
-      <div className="border-b-[1px] border-neutral-800 pb-4">
-         <div className="flex justify-end p-2">
+      <div className={Styles.bio}>
+         <div className={Styles.user}>
             {currentUser?.id === userId ? (
                <Button secondary label="Edit" onClick={editModal.onOpen} />
             ) : (
                <Button onClick={() => {}} label="Follow" secondary />
             )}
          </div>
-         <div className="mt-8 px-4">
-            <div className="flex flex-col">
-               <p className="text-white text-2xl font-semibold">{fetchUser?.name}</p>
-               <p className="text-md text-neutral-400">@{fetchUser?.username}</p>
-            </div>
-            <div className="flex flex-col mt-4">
-               <p className="text-white">{fetchUser?.bio}</p>
-               <div className="flex flex-row items-center gap-2 mt-4 text-neutral-400">
-                  <BiCalendar size={24} />
-                  <p>Joined {createdAt}</p>
+         <div className={Styles.wraps}>
+            <div className={Styles.wrap}>
+               <div className={Styles.col}>
+                  <p className={Styles.primText}>{fetchUser?.name}</p>
+                  <p className={Styles.secText}>@{fetchUser?.username}</p>
+               </div>
+               <div className={Styles.col}>
+                  <p className="text-white">{fetchUser?.bio}</p>
+                  <div className={Styles.joined}>
+                     <BiCalendar size={24} />
+                     <p>Joined {createdAt}</p>
+                  </div>
                </div>
             </div>
-            <div className="flex flex-row items-center mt-4 gap-6">
-               <div className="flex flex-row items-center gap-1">
+            <div className={Styles.rows}>
+               <div className={Styles.info}>
                   <p className="text-white">{fetchUser?.followingIds?.length}</p>
-                  <p className="text-neutral-400">Following</p>
+                  <p className={Styles.secText}>Following</p>
                </div>
-               <div className="flex flex-row items-center gap-1">
+               <div className={Styles.info}>
                   <p className="text-white">{fetchUser?.followersCount || 0}</p>
-                  <p className="text-neutral-400">Followers</p>
+                  <p className={Styles.secText}>Followers</p>
                </div>
             </div>
          </div>

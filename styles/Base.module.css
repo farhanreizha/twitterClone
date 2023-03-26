@@ -1,0 +1,30 @@
+.input {
+   @apply w-full p-4 text-lg bg-black border-2 border-neutral-800 rounded-md outline-none text-white focus:border-sky-500 focus:border-2 transition disabled:bg-neutral-900 disabled:opacity-70 disabled:cursor-not-allowed;
+}
+.button {
+   @apply disabled:opacity-70 disabled:cursor-not-allowed rounded-full font-semibold hover:opacity-80 transition border-2;
+}
+.primary {
+   @apply bg-sky-500 text-white border-sky-500;
+}
+.secondary {
+   @apply bg-white text-black border-black;
+}
+.outline {
+   @apply bg-transparent border-white text-white;
+}
+.wrap {
+   @apply w-full p-4 text-white text-center cursor-pointer border-2 border-dotted rounded-md border-neutral-700;
+}
+.image {
+   @apply flex items-center justify-center;
+}
+.label {
+   @apply text-white;
+}
+.avatar {
+   @apply rounded-full hover:opacity-90 transition cursor-pointer relative;
+}
+.border {
+   @apply border-4 border-black;
+}

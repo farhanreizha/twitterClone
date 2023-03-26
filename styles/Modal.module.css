@@ -1,0 +1,41 @@
+.container {
+   @apply justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-neutral-800 bg-opacity-70;
+}
+
+.overlay {
+   @apply relative w-full xl:w-3/6 my-6 mx-auto xl:max-w-3xl h-full xl:h-auto;
+}
+
+.background {
+   @apply h-full xl:h-auto border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-black outline-none focus:outline-none;
+}
+
+/* Header */
+.header {
+   @apply flex items-center justify-center p-10 rounded-t;
+}
+.title {
+   @apply text-3xl font-semibold text-white;
+}
+.closeButton {
+   @apply p-1 ml-auto border-0 text-white hover:opacity-70 transition;
+}
+
+/* Body */
+.content {
+   @apply relative p-10 flex-auto;
+}
+.form {
+   @apply flex flex-col gap-4;
+}
+
+/* Footer */
+.footer {
+   @apply flex flex-col gap-2 p-10;
+}
+.footerContent {
+   @apply text-neutral-400 text-center mt-4;
+}
+.footerLink {
+   @apply text-white cursor-pointer hover:underline;
+}

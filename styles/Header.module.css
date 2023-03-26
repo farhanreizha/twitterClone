@@ -1,0 +1,12 @@
+.base {
+   @apply border-b-[1px] border-b-neutral-800 p-5;
+}
+.wrap {
+   @apply flex flex-row items-center gap-2;
+}
+.arrow {
+   @apply cursor-pointer hover:opacity-70 transition;
+}
+.label {
+   @apply text-white text-xl font-semibold;
+}
